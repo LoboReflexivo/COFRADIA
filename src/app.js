@@ -16,6 +16,11 @@ const app = express();
 
 //usa el modulo morgan con la configuración "dev"
 app.use(morgan("dev"));
+/*
+El backend no entiende los datos de JSON cuando nostoros creamos un servidor de express.
+para ello tenemos que usar el metodo de express que transforma los req.body en formato JSON u objeto JavaScript y de esta forma el backend lo entienda.
+*/
+app.use(express.json());
 
 /*despues que se ponga por consola la peticion de morgan
 le pedimos que use el authRoutes
